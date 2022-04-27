@@ -6,14 +6,14 @@ from statistics import mean
 
 
 class Beer(SQLModel, table=True):
-    id: Optional[int] = Field(primery_key=True, default=None, index=True)
+    id: Optional[int] = Field(primary_key=True, default=None, index=True)
     name: str
     style: str
     flavor: int
     image: int
     cost: int
     rate: int = 0
-    date: datetime = Field(defaul_factory=datetime.now)
+    date: datetime = Field(default_factory=datetime.now)
 
     @validator("flavor, image, cost")
     def validate_ratings(cls, v, field):
