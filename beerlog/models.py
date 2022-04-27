@@ -2,7 +2,7 @@ from typing import Optional
 from datetime import datetime
 from sqlmodel import SQLModel, Field
 from sqlmodel import select
-from pydentic import validator
+from pydantic import validator
 from statistics import mean
 
 
