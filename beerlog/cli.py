@@ -12,11 +12,11 @@ console = Console()
 
 @main.command()
 def add(
-        name: str,
-        style: str,
-        flavor: int = typer.Option(...),
-        image: int = typer.Option(...),
-        cost: int = typer.Option(...)
+    name: str,
+    style: str,
+    flavor: int = typer.Option(...),
+    image: int = typer.Option(...),
+    cost: int = typer.Option(...),
 ):
     """Add a new beer to the database"""
     if add_beer_to_database(name, style, flavor, image, cost):
