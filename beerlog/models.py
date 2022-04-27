@@ -1,13 +1,12 @@
+from sqlmodel import SQLModel, Field
 from typing import Optional
 from datetime import datetime
-from sqlmodel import SQLModel, Field
-from sqlmodel import select
 from pydantic import validator
 from statistics import mean
 
 
 class Beer(SQLModel, table=True):
-    id: Optional[int] = Field(primery_key=True, default=None)
+    id: Optional[int] = Field(primery_key=True, default=None, index=True)
     name: str
     style: str
     flavor: int
