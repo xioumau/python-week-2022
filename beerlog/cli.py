@@ -26,7 +26,7 @@ def add(
 
 
 @main.command("list")
-def list_beer(style: Optional[str] = None):
+def list_beers(style: Optional[str] = None):
     """Lists beers from database"""
     beers = get_beers_from_database(style)
     table = Table(
@@ -45,9 +45,8 @@ def list_beer(style: Optional[str] = None):
     for header in headers:
         table.add_column(header, style="magenta")
     for beer in beers:
-        beer.date = beer.date.strftime("%y-%m-%d")
+        beer.date = beer.date.strftime("%Y-%m-%d")
         values = [str(getattr(beer, header)) for header in headers]
         table.add_row(*values)
 
     console.print(table)
-    

@@ -1,4 +1,3 @@
-from re import S
 from typing import Optional, List
 from sqlmodel import select
 from beerlog.database import get_session
@@ -24,5 +23,5 @@ def get_beers_from_database(style: Optional[str] = None) -> List[Beer]:
     with get_session() as session:
         sql = select(Beer)
         if style:
-            sql = select.where(Beer.style == style)
+            sql = sql.where(Beer.style == style)
         return List(session.exec(sql))
