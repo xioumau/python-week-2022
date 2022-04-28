@@ -10,7 +10,7 @@ main = typer.Typer(help="Beer Management Application")
 console = Console()
 
 
-@main.command()
+@main.command("add")
 def add(
     name: str,
     style: str,
@@ -18,7 +18,7 @@ def add(
     image: int = typer.Option(...),
     cost: int = typer.Option(...),
 ):
-    """Add a new beer to the database"""
+    """Adds a new beer to the database"""
     if add_beer_to_database(name, style, flavor, image, cost):
         print(":beer_mug: Beer added!")
     else:

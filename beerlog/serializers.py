@@ -1,6 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel, validator
-from fastapi import HTTPSException, status
+from fastapi import HTTPException, status
 
 
 class BeerOut(BaseModel):

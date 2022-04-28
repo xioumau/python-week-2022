@@ -24,4 +24,4 @@ def get_beers_from_database(style: Optional[str] = None) -> List[Beer]:
         sql = select(Beer)
         if style:
             sql = sql.where(Beer.style == style)
-        return List(session.exec(sql))
+        return list(session.exec(sql))

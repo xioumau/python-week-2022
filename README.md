@@ -69,3 +69,8 @@ python -m beerlog
 ```
 
 Se apareceu `Hello from beerlog` então está tudo certo.
+
+Exemplo de como adicionar uma cerveja pelo terminal:
+```bash
+beerlog add "Itaipava" "Pilsen" --flavor=4 --image=3 --cost=6
+```
